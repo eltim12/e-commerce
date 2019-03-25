@@ -57,30 +57,38 @@ export default {
   methods: {
     addToCart() {
       console.log("masok add to cart whoooi");
-      axios
-        .post(
-          `http://localhost:3000/users/addToCart?id=${localStorage.getItem(
-            "userId"
-          )}`,
-          {
-            productId: this.$route.params.id
-          },
-          {
-            headers: {
-              token: localStorage.getItem("token")
+      if (localStorage.getItem("userId")) {
+        axios
+          .post(
+            `http://localhost:3000/users/addToCart?id=${localStorage.getItem(
+              "userId"
+            )}`,
+            {
+              productId: this.$route.params.id
+            },
+            {
+              headers: {
+                token: localStorage.getItem("token")
+              }
             }
-          }
-        )
-        .then(addedProduct => {
-          this.$store.dispatch("notif", {
-            type: "success",
-            message: "Added Item to Your Cart.."
+          )
+          .then(addedProduct => {
+            this.$store.dispatch("notif", {
+              type: "success",
+              message: "Added Item to Your Cart.."
+            });
+            this.$router.push("/products");
+          })
+          .catch(err => {
+            console.log(err);
           });
-          this.$router.push("/products");
+      } else {
+        this.$store.dispatch("notif", {
+          type: "error",
+          message: "You have to login duls"
         })
-        .catch(err => {
-          console.log(err);
-        });
+        this.$router.push("/login")
+      }
     }
   }
 };
@@ -93,7 +101,7 @@ export default {
 }
 
 #content {
-  margin-top: 5rem;
+  margin-top: 6.5rem;
 }
 
 #info {
@@ -114,9 +122,11 @@ export default {
 }
 
 #detail-box {
+  position: fixed;
   border-top: 1px solid black;
   margin-top: 110px;
-  bottom: 0;
+  bottom: 10.2rem;
+  width: 40.7rem;
 }
 
 #add-to-cart {

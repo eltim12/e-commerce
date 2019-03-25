@@ -62,7 +62,11 @@ export default {
     };
   },
   created() {
-    this.$store.dispatch("getProducts");
+    // setTimeout(function() {
+      this.$store.dispatch("getProducts");
+      // console.log("timeout completed");
+    // }, 2000);
+
     if (localStorage.getItem("role") === "admin") {
       console.log("masok ke admin!");
       this.role = "admin";

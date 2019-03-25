@@ -8,8 +8,7 @@ const port = 3000;
 const mongoose = require("mongoose");
 mongoose.set("useFindAndModify", false);
 
-mongoose.connect("mongodb://localhost/e-commerce-development", { useNewUrlParser: true });
-
+mongoose.connect(`mongodb+srv://eltim:${process.env.MONGO_PASSWORD}@cluster0-sfchz.gcp.mongodb.net/test?retryWrites=true`, { useNewUrlParser: true });
 
 app.use(express.urlencoded({ extended: false }));
 
