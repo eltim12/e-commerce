@@ -222,7 +222,7 @@ h5 {
     width: 20rem;
     /* margin-top: 5rem; */
     margin-bottom: 10rem;
-    margin-left: 31.2rem;
+    margin-left: 30rem;
 
     -moz-transition: all 0.2s ease-in;
     -o-transition: all 0.2s ease-in;
@@ -235,7 +235,7 @@ h5 {
 }
 
 #empty-cart {
-    margin-top: 15rem;
+    margin-top: 18rem;
 }
 
 </style>

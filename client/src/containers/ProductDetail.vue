@@ -101,7 +101,7 @@ export default {
 }
 
 #content {
-  margin-top: 6.5rem;
+  margin-top: 10rem;
 }
 
 #info {
@@ -124,9 +124,9 @@ export default {
 #detail-box {
   position: fixed;
   border-top: 1px solid black;
-  margin-top: 110px;
-  bottom: 10.2rem;
-  width: 40.7rem;
+  /* margin-top: 3; */
+  bottom: 14.2rem;
+  width: 39.3rem;
 }
 
 #add-to-cart {

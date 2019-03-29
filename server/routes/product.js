@@ -14,9 +14,9 @@ router.get("/", productController.allProduct);
 router.get("/find", productController.findProduct);
 
 // ──[update a product]─────────────────────
-router.put("/",  authentication, authorization, images.multer.single("image"), images.sendUploadToGCS, productController.updateProduct);
+router.put("/", authentication, authorization, images.multer.single("image"), images.sendUploadToGCS, productController.updateProduct);
 
 // ──[delete a product]─────────────────────
-router.delete("/", productController.deleteProduct);
+router.delete("/", authentication, authorization, productController.deleteProduct);
 
 module.exports = router;

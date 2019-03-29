@@ -111,7 +111,7 @@ export default {
 
 <style scoped>
 #form {
-  margin-top: 2rem;
+  margin-top: 6rem;
 }
 
 #submit-button {
